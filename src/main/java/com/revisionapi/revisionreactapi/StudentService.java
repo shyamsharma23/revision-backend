@@ -30,4 +30,11 @@ public class StudentService {
         return "Student is deleted successfully";
 
     }
+
+    public Student updateStudent(long id, Student student){
+        Student student1 = studentRepository.findById(id).get();
+        student1.setCourseName(student.getCourseName());
+        return studentRepository.save(student1);
+
+    }
 }

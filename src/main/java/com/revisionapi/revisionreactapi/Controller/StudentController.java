@@ -32,4 +32,10 @@ public class StudentController {
     public String acceptHttpRequestForDeletingStudent(@PathVariable("id") long id){
         return studentService.deleteStudent(id);
     }
+
+    @PutMapping("/{id}")
+    public Student acceptHttpRequestForUpdatingStudent(@RequestBody Student student,
+                                                       @PathVariable("id") long id){
+        return studentService.updateStudent(id, student);
+    }
 }
